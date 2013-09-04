@@ -43,14 +43,15 @@ around 'dump_config' => sub {
 around 'plugin_from_config' => sub {
   my ( $orig, $self, $name, $payload, $section ) = @_;
 
-  use Data::Dump qw(pp);
-  pp( $payload );
-  my $copy = { %{$payload} };
-  my $new  = {};
-  $new->{zilla}       = delete $copy->{zilla};
-  $new->{plugin_name} = delete $copy->{plugin_name};
-  $new->{_module_map} = $copy;
-  pp($new);
+  my $special_fields = [qw( try_built fallback )];
+  my $module_map   = { %{$payload} };
+  my $new          = {};
+
+  for my $field ( @{ $special_fields } ) {
+      $new->{$field} = delete $module_map->{$field} if exists $module_map->{$field};
+  }
+  $new->{module_map} = $module_map;
+
   return $self->$orig( $name, $new, $section );
 };
 
@@ -65,7 +66,8 @@ sub bootstrap {
   my $resolved_map = {};
 
   for my $key ( keys %{ $self->module_map } ) {
-    $resolved_map->{$key} = path( $self->module_map->{$key} )->absolute($root);
+    require Path::Tiny;
+    $resolved_map->{$key} = Path::Tiny::path( $self->module_map->{$key} )->absolute($root);
   }
   require Test::File::ShareDir::TempDirObject;
   my $object = Test::File::ShareDir::TempDirObject->new( { -share => { -module => $resolved_map } } );
