@@ -33,6 +33,10 @@ requires:
   perl: v5.10.0
   strict: 0
   warnings: 0
+resources:
+  bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module/issues
+  homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
+  repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module.git
 version: 0.1.0
 x_BuiltWith:
   modules:
