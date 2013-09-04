@@ -50,6 +50,7 @@ around 'plugin_from_config' => sub {
   $new->{zilla}       = delete $copy->{zilla};
   $new->{plugin_name} = delete $copy->{plugin_name};
   $new->{_module_map} = $copy;
+  pp($new);
   return $self->$orig( $name, $new, $section );
 };
 
