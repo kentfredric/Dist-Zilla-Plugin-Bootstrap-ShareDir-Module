@@ -44,6 +44,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Data::Dump" : "0",
             "Dist::Zilla::Role::Bootstrap" : "0",
             "Moose" : "0",
             "MooseX::AttributeShortcuts" : "0",
@@ -71,6 +72,7 @@
    "version" : "0.1.0",
    "x_BuiltWith" : {
       "modules" : {
+         "Data::Dump" : "1.22",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.8.3",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "NA(possibly not installed)",
          "Dist::Zilla::Role::Bootstrap" : "0.1.0",

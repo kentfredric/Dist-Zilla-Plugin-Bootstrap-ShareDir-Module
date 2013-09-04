@@ -43,6 +43,8 @@ around 'dump_config' => sub {
 around 'plugin_from_config' => sub {
   my ( $orig, $self, $name, $payload, $section ) = @_;
 
+  use Data::Dump qw(pp);
+  pp( $payload );
   my $copy = { %{$payload} };
   my $new  = {};
   $new->{zilla}       = delete $copy->{zilla};
