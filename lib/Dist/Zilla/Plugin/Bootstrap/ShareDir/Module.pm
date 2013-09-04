@@ -9,6 +9,7 @@ use Moose;
 use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -28,7 +29,7 @@ has module_map => (
   lazy    => 1,
   builder => sub {
     {};
-  }
+  },
 );
 around 'dump_config' => sub {
   my ( $orig, $self, @args ) = @_;
@@ -50,11 +51,11 @@ around 'plugin_from_config' => sub {
   my ( $orig, $self, $name, $payload, $section ) = @_;
 
   my $special_fields = [qw( try_built fallback )];
-  my $module_map   = { %{$payload} };
-  my $new          = {};
+  my $module_map     = { %{$payload} };
+  my $new            = {};
 
-  for my $field ( @{ $special_fields } ) {
-      $new->{$field} = delete $module_map->{$field} if exists $module_map->{$field};
+  for my $field ( @{$special_fields} ) {
+    $new->{$field} = delete $module_map->{$field} if exists $module_map->{$field};
   }
   $new->{module_map} = $module_map;
 
