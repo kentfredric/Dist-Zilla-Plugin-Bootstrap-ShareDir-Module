@@ -1,5 +1,9 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
+0.1.1 2013-09-08T10:08:36Z
+ [Bugfix]
+ - Need Bootstrap::lib for tests
+
 0.1.0 2013-09-04T22:01:12Z
  - First version.
 
