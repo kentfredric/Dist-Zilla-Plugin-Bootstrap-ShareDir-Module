@@ -73,7 +73,7 @@ sub bootstrap {
   require Test::File::ShareDir::TempDirObject;
   my $object = Test::File::ShareDir::TempDirObject->new( { -share => { -module => $resolved_map } } );
   for my $module ( $object->_module_names ) {
-    $self->log( ['Bootstrapped sharedir for %s -> %s', $module, $resolved_map->{$module}->relative('.') ]);
+    $self->log( ['Bootstrapped sharedir for %s -> %s', $module, $resolved_map->{$module}->relative('.')->stringify ]);
     $self->log_debug(
       [
         'Installing module %s sharedir ( %s => %s )',
