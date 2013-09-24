@@ -1,5 +1,15 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
+0.1.2 2013-09-24T23:49:46Z
+ [Bugfix]
+ - use Test::DZil internally instead of calling dzil
+ - log bootstrapping of modules instead of silence
+
+ [Dependencies::Added / test requires]
+ - File::Spec
+ - Test::DZil
+ - Test::Fatal
+
 0.1.1 2013-09-08T11:23:50Z
  [Bugfix]
  - Need Bootstrap::lib for tests

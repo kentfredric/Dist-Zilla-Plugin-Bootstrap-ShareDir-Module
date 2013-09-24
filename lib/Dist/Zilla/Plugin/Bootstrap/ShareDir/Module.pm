@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.1.1';
+  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.1.2';
 }
 
 # ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
@@ -73,6 +73,7 @@ sub bootstrap {
   require Test::File::ShareDir::TempDirObject;
   my $object = Test::File::ShareDir::TempDirObject->new( { -share => { -module => $resolved_map } } );
   for my $module ( $object->_module_names ) {
+    $self->log( [ 'Bootstrapped sharedir for %s -> %s', $module, $resolved_map->{$module}->relative(q[.])->stringify ] );
     $self->log_debug(
       [
         'Installing module %s sharedir ( %s => %s )',
@@ -106,7 +107,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a C<share> directory on y
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =begin MetaPOD::JSON v1.1.0
 
