@@ -42,6 +42,8 @@ my %module_build_args = (
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "Path::FindDev" => 0,
+    "Test::DZil" => 0,
+    "Test::Fatal" => 0,
     "Test::More" => "0.98"
   }
 );
