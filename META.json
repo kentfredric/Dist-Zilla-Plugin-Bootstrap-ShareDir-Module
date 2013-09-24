@@ -149,7 +149,7 @@
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-Plugin-Bootstrap-ShareDir-Module",
                   "fallback" : "1",
-                  "try_built" : null,
+                  "try_built" : "1",
                   "try_built_method" : "mtime"
                }
             },
@@ -172,7 +172,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Module",
-            "version" : null
+            "version" : "0.1.2"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
