@@ -3,6 +3,7 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 {{$NEXT}}
  [Bugfix]
  - use Test::DZil internally instead of calling dzil
+ - log bootstrapping of modules instead of silence
 
  [Dependencies::Added / test requires]
  - File::Spec
