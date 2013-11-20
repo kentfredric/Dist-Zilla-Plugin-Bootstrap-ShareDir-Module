@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
 {{$NEXT}}
+
+0.1.3 2013-11-20T09:44:25Z
  [00 Minor]
  - Drop 5.10 requirement
 
