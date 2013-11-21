@@ -246,7 +246,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Module",
-            "version" : null
+            "version" : "0.2.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
