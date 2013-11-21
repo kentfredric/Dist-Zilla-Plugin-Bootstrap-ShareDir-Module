@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.1.4';
+  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.2.0';
 }
 
 # ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
@@ -107,7 +107,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a C<share> directory on y
 
 =head1 VERSION
 
-version 0.1.4
+version 0.2.0
 
 =begin MetaPOD::JSON v1.1.0
 

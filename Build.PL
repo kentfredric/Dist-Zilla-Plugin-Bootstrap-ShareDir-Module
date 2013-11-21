@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Plugin-Bootstrap-ShareDir-Module",
-  "dist_version" => "0.1.4",
+  "dist_version" => "0.2.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Plugin::Bootstrap::ShareDir::Module",
   "recommends" => {},
