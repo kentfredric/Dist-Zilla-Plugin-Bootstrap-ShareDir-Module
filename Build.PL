@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Plugin-Bootstrap-ShareDir-Module",
-  "dist_version" => "0.1.3",
+  "dist_version" => "0.2.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Plugin::Bootstrap::ShareDir::Module",
   "recommends" => {},
@@ -27,7 +27,7 @@ my %module_build_args = (
     "Moose" => 0,
     "MooseX::AttributeShortcuts" => 0,
     "Path::Tiny" => 0,
-    "Test::File::ShareDir::TempDirObject" => 0,
+    "Test::File::ShareDir::Object::Module" => 0,
     "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0

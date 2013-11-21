@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.1.3';
+  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.2.0';
 }
 
 # ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
@@ -70,22 +70,22 @@ sub bootstrap {
     require Path::Tiny;
     $resolved_map->{$key} = Path::Tiny::path( $self->module_map->{$key} )->absolute($root);
   }
-  require Test::File::ShareDir::TempDirObject;
-  my $object = Test::File::ShareDir::TempDirObject->new( { -share => { -module => $resolved_map } } );
-  for my $module ( $object->_module_names ) {
+  require Test::File::ShareDir::Object::Module;
+  my $object = Test::File::ShareDir::Object::Module->new( modules => $resolved_map );
+  for my $module ( $object->module_names ) {
     $self->log( [ 'Bootstrapped sharedir for %s -> %s', $module, $resolved_map->{$module}->relative(q[.])->stringify ] );
     $self->log_debug(
       [
         'Installing module %s sharedir ( %s => %s )',
         "$module",
-        $object->_module_share_source_dir($module) . q{},
-        $object->_module_share_target_dir($module) . q{},
+        $object->module_share_source_dir($module) . q{},
+        $object->module_share_target_dir($module) . q{},
       ]
     );
-    $object->_install_module($module);
+    $object->install_module($module);
   }
-  $self->_add_inc( $object->_tempdir . q{} );
-  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->_tempdir . q{} ] );
+  $self->_add_inc( $object->inc->tempdir . q{} );
+  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->inc->module_tempdir . q{} ] );
   return;
 }
 
@@ -107,7 +107,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a C<share> directory on y
 
 =head1 VERSION
 
-version 0.1.3
+version 0.2.0
 
 =begin MetaPOD::JSON v1.1.0
 
