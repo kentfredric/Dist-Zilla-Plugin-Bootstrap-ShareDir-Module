@@ -87,7 +87,7 @@
             "Moose" : "0",
             "MooseX::AttributeShortcuts" : "0",
             "Path::Tiny" : "0",
-            "Test::File::ShareDir::TempDirObject" : "0",
+            "Test::File::ShareDir::Object::Module" : "0",
             "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
@@ -109,7 +109,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Bootstrap::ShareDir::Module" : {
          "file" : "lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Module.pm",
-         "version" : "v0.1.3"
+         "version" : "v0.1.4"
       }
    },
    "release_status" : "stable",
@@ -124,7 +124,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module"
       }
    },
-   "version" : "0.1.3",
+   "version" : "0.1.4",
    "x_BuiltWith" : {
       "modules" : {
          "Cwd" : "3.45",
@@ -186,7 +186,7 @@
          "Test::CPAN::Meta" : "0.23",
          "Test::DZil" : "5.006",
          "Test::Fatal" : "0.013",
-         "Test::File::ShareDir::TempDirObject" : "0.3.3",
+         "Test::File::ShareDir::Object::Module" : "0.3.4",
          "Test::Kwalitee" : "1.17",
          "Test::More" : "1.001002",
          "Test::Pod" : "1.48",
