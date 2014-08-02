@@ -5,6 +5,8 @@ package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
 # ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
 
+# AUTHORITY
+
 use Moose;
 use MooseX::AttributeShortcuts;
 
