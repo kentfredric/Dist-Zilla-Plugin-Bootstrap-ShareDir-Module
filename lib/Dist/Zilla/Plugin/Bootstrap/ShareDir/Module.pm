@@ -41,13 +41,13 @@ around 'dump_config' => sub {
   my ( $orig, $self, @args ) = @_;
   my $config    = $self->$orig(@args);
   my $localconf = {};
-  for my $var (qw( module_map )) {
-    my $pred = 'has_' . $var;
+  for my $attribute (qw( module_map )) {
+    my $pred = 'has_' . $attribute;
     if ( $self->can($pred) ) {
       next unless $self->$pred();
     }
-    if ( $self->can($var) ) {
-      $localconf->{$var} = $self->$var();
+    if ( $self->can($attribute) ) {
+      $localconf->{$attribute} = $self->$attribute();
     }
   }
   $config->{ q{} . __PACKAGE__ } = $localconf;
@@ -83,21 +83,21 @@ sub bootstrap {
     $resolved_map->{$key} = Path::Tiny::path( $self->module_map->{$key} )->absolute($root);
   }
   require Test::File::ShareDir::Object::Module;
-  my $object = Test::File::ShareDir::Object::Module->new( modules => $resolved_map );
-  for my $module ( $object->module_names ) {
+  my $share_object = Test::File::ShareDir::Object::Module->new( modules => $resolved_map );
+  for my $module ( $share_object->module_names ) {
     $self->log( [ 'Bootstrapped sharedir for %s -> %s', $module, $resolved_map->{$module}->relative(q[.])->stringify ] );
     $self->log_debug(
       [
         'Installing module %s sharedir ( %s => %s )',
         "$module",
-        $object->module_share_source_dir($module) . q{},
-        $object->module_share_target_dir($module) . q{},
+        $share_object->module_share_source_dir($module) . q{},
+        $share_object->module_share_target_dir($module) . q{},
       ]
     );
-    $object->install_module($module);
+    $share_object->install_module($module);
   }
-  $self->_add_inc( $object->inc->tempdir . q{} );
-  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->inc->module_tempdir . q{} ] );
+  $self->_add_inc( $share_object->inc->tempdir . q{} );
+  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $share_object->inc->module_tempdir . q{} ] );
   return;
 }
 
