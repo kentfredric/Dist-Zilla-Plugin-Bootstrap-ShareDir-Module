@@ -92,7 +92,7 @@ sub bootstrap {
         "$module",
         $share_object->module_share_source_dir($module) . q{},
         $share_object->module_share_target_dir($module) . q{},
-      ]
+      ],
     );
     $share_object->install_module($module);
   }
