@@ -251,7 +251,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Module",
-            "version" : "1.0.0"
+            "version" : "1.000000"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
