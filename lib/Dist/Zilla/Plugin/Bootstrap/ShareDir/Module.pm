@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
-our $VERSION = '0.2.1';
+our $VERSION = '1.000000';
 
 # ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
 

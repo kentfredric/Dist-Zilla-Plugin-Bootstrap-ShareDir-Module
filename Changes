@@ -9,6 +9,11 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
  - "latest" dependencies now only recommended, not required.
  - https://questhub.io/realm/perl/quest/5388cc12bbd0be5b2500011f
 
+ [02 Version Scheme]
+ - Switched from x.y.z to x.yyyyyy
+ - This is the primary reason for the 1.x on the box
+ - https://questhub.io/realm/perl/quest/5388d3a9bbd0be2224000129
+
  [Dependencies::Stats]
  - Dependencies changed since 0.2.0, see misc/*.deps* for details
  - build: -1
