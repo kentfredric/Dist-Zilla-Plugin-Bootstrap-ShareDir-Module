@@ -23,6 +23,10 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Removed / configure requires]
  - Module::Build 0.4202
 
+ [Removed / test requires]
+ - Cwd
+ - Path::FindDev
+
 0.2.0 2013-11-21T07:22:18Z
  [Added / runtime requires]
  - Test::File::ShareDir::Object::Module
