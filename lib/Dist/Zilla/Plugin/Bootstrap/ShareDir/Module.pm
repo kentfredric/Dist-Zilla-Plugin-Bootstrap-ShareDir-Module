@@ -1,20 +1,32 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
-BEGIN {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.2.0';
-}
 
-# ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
+our $VERSION = '1.000000';
 
-use Moose;
+# ABSTRACT: Use a share directory on your dist for a module during bootstrap
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moose qw( with has around );
 use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has module_map => (
@@ -29,13 +41,13 @@ around 'dump_config' => sub {
   my ( $orig, $self, @args ) = @_;
   my $config    = $self->$orig(@args);
   my $localconf = {};
-  for my $var (qw( module_map )) {
-    my $pred = 'has_' . $var;
+  for my $attribute (qw( module_map )) {
+    my $pred = 'has_' . $attribute;
     if ( $self->can($pred) ) {
       next unless $self->$pred();
     }
-    if ( $self->can($var) ) {
-      $localconf->{$var} = $self->$var();
+    if ( $self->can($attribute) ) {
+      $localconf->{$attribute} = $self->$attribute();
     }
   }
   $config->{ q{} . __PACKAGE__ } = $localconf;
@@ -71,21 +83,21 @@ sub bootstrap {
     $resolved_map->{$key} = Path::Tiny::path( $self->module_map->{$key} )->absolute($root);
   }
   require Test::File::ShareDir::Object::Module;
-  my $object = Test::File::ShareDir::Object::Module->new( modules => $resolved_map );
-  for my $module ( $object->module_names ) {
+  my $share_object = Test::File::ShareDir::Object::Module->new( modules => $resolved_map );
+  for my $module ( $share_object->module_names ) {
     $self->log( [ 'Bootstrapped sharedir for %s -> %s', $module, $resolved_map->{$module}->relative(q[.])->stringify ] );
     $self->log_debug(
       [
         'Installing module %s sharedir ( %s => %s )',
         "$module",
-        $object->module_share_source_dir($module) . q{},
-        $object->module_share_target_dir($module) . q{},
-      ]
+        $share_object->module_share_source_dir($module) . q{},
+        $share_object->module_share_target_dir($module) . q{},
+      ],
     );
-    $object->install_module($module);
+    $share_object->install_module($module);
   }
-  $self->_add_inc( $object->inc->tempdir . q{} );
-  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $object->inc->module_tempdir . q{} ] );
+  $self->_add_inc( $share_object->inc->tempdir . q{} );
+  $self->log_debug( [ 'Sharedir for %s installed to %s', $self->distname, $share_object->inc->module_tempdir . q{} ] );
   return;
 }
 
@@ -103,11 +115,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a C<share> directory on your dist for a module during bootstrap
+Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a share directory on your dist for a module during bootstrap
 
 =head1 VERSION
 
-version 0.2.0
+version 1.000000
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -127,7 +139,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
