@@ -19,6 +19,7 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
  - build: -1
  - configure: +1 -1 (recommends: +1)
  - develop: +9 -11 (suggests: +2 -1)
+ - runtime: +1 ↑1
  - test: +2 ↓1 (recommends: +3)
 
 0.2.0 2013-11-21T07:22:18Z
