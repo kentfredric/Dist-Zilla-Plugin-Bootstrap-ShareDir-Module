@@ -11,7 +11,7 @@ our $VERSION = '1.000000';
 
 # AUTHORITY
 
-use Moose;
+use Moose qw( with has around );
 use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
