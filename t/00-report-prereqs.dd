@@ -70,8 +70,9 @@ do { my $x = {
                                       'MooseX::AttributeShortcuts' => '0',
                                       'Path::Tiny' => '0',
                                       'Test::File::ShareDir::Object::Module' => '0',
-                                      'perl' => '5.006',
+                                      'perl' => '5.008',
                                       'strict' => '0',
+                                      'utf8' => '0',
                                       'warnings' => '0'
                                     }
                     },
