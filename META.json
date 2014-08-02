@@ -113,7 +113,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Bootstrap::ShareDir::Module" : {
          "file" : "lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Module.pm",
-         "version" : "v1.0.0"
+         "version" : "1.000000"
       }
    },
    "release_status" : "stable",
@@ -128,7 +128,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module"
       }
    },
-   "version" : "1.0.0",
+   "version" : "1.000000",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
@@ -251,7 +251,7 @@
                }
             },
             "name" : "Bootstrap::ShareDir::Module",
-            "version" : "0.2.1"
+            "version" : "1.0.0"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
@@ -416,7 +416,7 @@
             "config" : {
                "Dist::Zilla::Role::Version::Sanitize" : {
                   "mantissa" : "6",
-                  "normal_form" : "normal_3"
+                  "normal_form" : "numify"
                }
             },
             "name" : "@Author::KENTNL/RewriteVersion::Sanitized",
@@ -643,7 +643,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "1.0.0-source",
+                  "tag" : "1.000000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -714,7 +714,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "1.0.0",
+                  "tag" : "1.000000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"

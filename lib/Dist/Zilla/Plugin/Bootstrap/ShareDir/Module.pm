@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
-our $VERSION = '1.0.0';
+our $VERSION = '1.000000';
 
 # ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
 
@@ -117,7 +117,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a C<share> directory on y
 
 =head1 VERSION
 
-version 1.0.0
+version 1.000000
 
 =begin MetaPOD::JSON v1.1.0
 
