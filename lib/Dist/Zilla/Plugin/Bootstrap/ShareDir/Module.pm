@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: Use a share directory on your dist for a module during bootstrap
 
@@ -119,7 +119,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a share directory on your
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =begin MetaPOD::JSON v1.1.0
 
