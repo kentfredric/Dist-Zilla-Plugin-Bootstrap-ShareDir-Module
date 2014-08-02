@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
 our $VERSION = '1.000000';
 
-# ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
+# ABSTRACT: Use a share directory on your dist for a module during bootstrap
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -115,7 +115,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a C<share> directory on your dist for a module during bootstrap
+Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a share directory on your dist for a module during bootstrap
 
 =head1 VERSION
 
