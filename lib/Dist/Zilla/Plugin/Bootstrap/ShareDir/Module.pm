@@ -2,19 +2,25 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
-BEGIN {
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.2.0';
-}
-
+$Dist::Zilla::Plugin::Bootstrap::ShareDir::Module::VERSION = '0.2.1';
 # ABSTRACT: Use a C<share> directory on your dist for a module during bootstrap
 
 use Moose;
 use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has module_map => (
@@ -107,7 +113,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a C<share> directory on y
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -127,7 +133,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
