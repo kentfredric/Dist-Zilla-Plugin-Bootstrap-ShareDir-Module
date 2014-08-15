@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
-1.000001 2014-08-02T14:45:31Z
+1.000001 2014-08-15T06:09:31Z
  [Dependencies::Stats]
  - Dependencies changed since 1.000000, see misc/*.deps* for details
  - develop: +1 (suggests: ↑1)
@@ -54,7 +54,7 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
  - Use new fallback stuff
 
  [Tests]
- - Regen ReportVersions to not report devel deps
+ - Regen ReportPrereqs to not report devel deps
  - Move from Test::Compile to Test::Compile::PerFile
 
 0.1.2 2013-09-24T23:49:46Z
