@@ -1,5 +1,26 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
+1.001000 2014-08-31T14:00:46Z
+ [00 Minor]
+ - Tests refactored
+ - Internals changed.
+ - Metadata fixes.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000000, see misc/*.deps* for details
+ - develop: +2 ↑1 (suggests: ↑2)
+ - runtime: +1
+ - test: +1 -2
+
+ [Internals]
+ - dump_config now implemented with ConfigDumper
+
+ [Metadata]
+ - author = kentnl
+
+ [Tests]
+ - Refactor all tests in terms of dztest util.
+
 1.000000 2014-08-02T14:44:12Z
  [00 Major]
  - Changes that affect hand-operated downstream.
@@ -49,7 +70,7 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
  - Use new fallback stuff
 
  [Tests]
- - Regen ReportVersions to not report devel deps
+ - Regen ReportPrereqs to not report devel deps
  - Move from Test::Compile to Test::Compile::PerFile
 
 0.1.2 2013-09-24T23:49:46Z

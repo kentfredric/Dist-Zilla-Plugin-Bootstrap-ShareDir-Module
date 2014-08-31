@@ -5,13 +5,14 @@ use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.001000';
 
 # ABSTRACT: Use a share directory on your dist for a module during bootstrap
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has around );
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
@@ -37,22 +38,9 @@ has module_map => (
     {};
   },
 );
-around 'dump_config' => sub {
-  my ( $orig, $self, @args ) = @_;
-  my $config    = $self->$orig(@args);
-  my $localconf = {};
-  for my $attribute (qw( module_map )) {
-    my $pred = 'has_' . $attribute;
-    if ( $self->can($pred) ) {
-      next unless $self->$pred();
-    }
-    if ( $self->can($attribute) ) {
-      $localconf->{$attribute} = $self->$attribute();
-    }
-  }
-  $config->{ q{} . __PACKAGE__ } = $localconf;
-  return $config;
-};
+
+around 'dump_config' => config_dumper( __PACKAGE__, { attrs => [qw( module_map )] } );
+
 around 'plugin_from_config' => sub {
   my ( $orig, $self, $name, $payload, $section ) = @_;
 
@@ -119,7 +107,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a share directory on your
 
 =head1 VERSION
 
-version 1.000000
+version 1.001000
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -135,7 +123,7 @@ version 1.000000
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
