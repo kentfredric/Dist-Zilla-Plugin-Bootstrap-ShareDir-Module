@@ -3,11 +3,16 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 {{$NEXT}}
  [00 Minor]
  - Tests refactored
+ - Internals changed.
 
  [Dependencies::Stats]
  - Dependencies changed since 1.000000, see misc/*.deps* for details
  - develop: +2 ↑1 (suggests: ↑2)
+ - runtime: +1
  - test: +1 -2
+
+ [Internals]
+ - dump_config now implemented with ConfigDumper
 
  [Tests]
  - Refactor all tests in terms of dztest util.
