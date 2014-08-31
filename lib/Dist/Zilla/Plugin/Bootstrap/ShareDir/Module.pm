@@ -39,7 +39,7 @@ has module_map => (
   },
 );
 
-around 'dump_config' => config_dumper( __PACKAGE__, { attrs => [qw( module_map )]});
+around 'dump_config' => config_dumper( __PACKAGE__, { attrs => [qw( module_map )] } );
 
 around 'plugin_from_config' => sub {
   my ( $orig, $self, $name, $payload, $section ) = @_;
