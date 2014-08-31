@@ -22,7 +22,7 @@ name: Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 provides:
   Dist::Zilla::Plugin::Bootstrap::ShareDir::Module:
     file: lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Module.pm
-    version: '1.000001'
+    version: '1.001000'
 requires:
   Dist::Zilla::Role::Bootstrap: '0'
   Moose: '0'
@@ -37,7 +37,7 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module.git
-version: '1.000001'
+version: '1.001000'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -468,7 +468,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 1.000001-source
+          tag: 1.001000-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -522,7 +522,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '1.000001'
+          tag: '1.001000'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
