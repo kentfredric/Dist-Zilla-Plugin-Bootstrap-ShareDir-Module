@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
 {{$NEXT}}
+
+1.001000 2014-08-31T14:00:46Z
  [00 Minor]
  - Tests refactored
  - Internals changed.
