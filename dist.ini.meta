@@ -14,8 +14,7 @@ try_built = 1
 Bootstrap::ShareDir::Module = share/B-SD-M
 
 [@Author::KENTNL]
-:version          = 1.2.0
-git_versions      = 1
+:version          = 2.020
 twitter_hash_tags = #perl #cpan
 normal_form       = numify
 mantissa          = 6
