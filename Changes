@@ -1,9 +1,9 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
-1.000001 2014-08-15T21:16:00Z
+1.000001 2014-08-31T12:00:08Z
  [Dependencies::Stats]
  - Dependencies changed since 1.000000, see misc/*.deps* for details
- - develop: +1 (suggests: ↑1)
+ - develop: +2 ↑1 (suggests: ↑2)
 
 1.000000 2014-08-02T14:44:12Z
  [00 Major]
