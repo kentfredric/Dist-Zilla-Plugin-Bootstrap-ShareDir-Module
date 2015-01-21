@@ -161,7 +161,7 @@ there's only one C<$VERSION>, otherwise it falls back to simply bootstrapping C<
     Foo::Bar = shares/foo_bar
     Foo::Baz = shares/foo_baz
     ; These are special cased
-    dir = share 
+    dir = share
     try_built = 1
 
 =head1 AUTHOR
