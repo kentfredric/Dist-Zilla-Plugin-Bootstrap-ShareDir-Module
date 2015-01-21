@@ -7,6 +7,9 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Added / test requires]
  - perl 5.008
 
+ [Removed / runtime requires]
+ - MooseX::AttributeShortcuts
+
 1.001000 2014-08-31T14:00:46Z
  [Added / runtime requires]
  - Dist::Zilla::Util::ConfigDumper
