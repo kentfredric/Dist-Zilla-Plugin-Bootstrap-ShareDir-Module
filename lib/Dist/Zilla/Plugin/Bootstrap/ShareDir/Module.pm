@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
-our $VERSION = '1.001001';
+our $VERSION = '1.001002';
 
 # ABSTRACT: Use a share directory on your dist for a module during bootstrap
 
@@ -104,7 +104,7 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a share directory on your
 
 =head1 VERSION
 
-version 1.001001
+version 1.001002
 
 =head1 DESCRIPTION
 
