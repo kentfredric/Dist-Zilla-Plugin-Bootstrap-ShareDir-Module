@@ -134,6 +134,36 @@ on the C<test> or C<run> phases of your dist. ( For that, you'll need C<Test::Fi
 
 =end MetaPOD::JSON
 
+=head1 USAGE
+
+    [Bootstrap::lib]
+
+    [Bootstrap::ShareDir::Module]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+
+    [ModuleShareDirs]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+
+The only significant difference between this module and C<ModuleShareDirs> is this module exists to
+make a C<share> visible to plugins for the distribution being built, while C<ModuleShareDirs> exists
+to export a C<share> directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by
+L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See
+L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
+
+For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/shares/foo_bar> if it exists and
+there's only one C<$VERSION>, otherwise it falls back to simply bootstrapping C<ROOT/shares/foo_bar>
+
+    [Bootstrap::ShareDir::Module]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+    ; These are special cased
+    dir = share 
+    try_built = 1
+
 =head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
