@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
-our $VERSION = '1.001000';
+our $VERSION = '1.001001';
 
 # ABSTRACT: Use a share directory on your dist for a module during bootstrap
 
@@ -13,7 +13,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has around );
 use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
-use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
 
@@ -31,13 +30,12 @@ with 'Dist::Zilla::Role::Bootstrap';
 
 
 has module_map => (
-  is      => 'ro',
-  isa     => 'HashRef',
-  lazy    => 1,
-  builder => sub {
-    {};
-  },
+  is         => 'ro',
+  isa        => 'HashRef',
+  lazy_build => 1,
 );
+
+sub _build_module_map { return {} }
 
 around 'dump_config' => config_dumper( __PACKAGE__, { attrs => [qw( module_map )] } );
 
@@ -91,7 +89,6 @@ sub bootstrap {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
-no MooseX::AttributeShortcuts;
 
 1;
 
@@ -107,7 +104,20 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a share directory on your
 
 =head1 VERSION
 
-version 1.001000
+version 1.001001
+
+=head1 DESCRIPTION
+
+This module allows one to load a C<Module> styled C<ShareDir> using a C<Bootstrap>
+mechanism so a distribution can use files in its own source tree when building with itself.
+
+This is very much like the C<Bootstrap::lib> plugin in that it injects libraries into
+C<@INC> based on your existing source tree, or a previous build you ran.
+
+And it is syntactically like the C<ModuleShareDirs> plugin.
+
+B<Note> that this is really only useful for self consuming I<plugins> and will have no effect
+on the C<test> or C<run> phases of your dist. ( For that, you'll need C<Test::File::ShareDir> ).
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -121,13 +131,43 @@ version 1.001000
 
 =end MetaPOD::JSON
 
+=head1 USAGE
+
+    [Bootstrap::lib]
+
+    [Bootstrap::ShareDir::Module]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+
+    [ModuleShareDirs]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+
+The only significant difference between this module and C<ModuleShareDirs> is this module exists to
+make a C<share> visible to plugins for the distribution being built, while C<ModuleShareDirs> exists
+to export a C<share> directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by
+L<< C<Dist::Zilla::Role::Bootstrap>|Dist::Zilla::Role::Bootstrap >>, See
+L<< Dist::Zilla::Role::Bootstrap/ATTRIBUTES >>
+
+For instance, this bootstraps C<ROOT/Your-Dist-Name-$VERSION/shares/foo_bar> if it exists and
+there's only one C<$VERSION>, otherwise it falls back to simply bootstrapping C<ROOT/shares/foo_bar>
+
+    [Bootstrap::ShareDir::Module]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+    ; These are special cased
+    dir = share
+    try_built = 1
+
 =head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
