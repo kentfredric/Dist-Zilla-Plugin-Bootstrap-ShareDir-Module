@@ -13,7 +13,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has around );
 use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
-use MooseX::AttributeShortcuts;
 
 with 'Dist::Zilla::Role::Bootstrap';
 
@@ -31,13 +30,12 @@ with 'Dist::Zilla::Role::Bootstrap';
 
 
 has module_map => (
-  is      => 'ro',
-  isa     => 'HashRef',
-  lazy    => 1,
-  builder => sub {
-    {};
-  },
+  is         => 'ro',
+  isa        => 'HashRef',
+  lazy_build => 1,
 );
+
+sub _build_module_map { return {} }
 
 around 'dump_config' => config_dumper( __PACKAGE__, { attrs => [qw( module_map )] } );
 
@@ -91,7 +89,6 @@ sub bootstrap {
 
 __PACKAGE__->meta->make_immutable;
 no Moose;
-no MooseX::AttributeShortcuts;
 
 1;
 
