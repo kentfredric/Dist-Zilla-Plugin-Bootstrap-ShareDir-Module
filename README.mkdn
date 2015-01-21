@@ -6,6 +6,49 @@ Dist::Zilla::Plugin::Bootstrap::ShareDir::Module - Use a share directory on your
 
 version 1.001001
 
+# DESCRIPTION
+
+This module allows one to load a `Module` styled `ShareDir` using a `Bootstrap`
+mechanism so a distribution can use files in its own source tree when building with itself.
+
+This is very much like the `Bootstrap::lib` plugin in that it injects libraries into
+`@INC` based on your existing source tree, or a previous build you ran.
+
+And it is syntactically like the `ModuleShareDirs` plugin.
+
+**Note** that this is really only useful for self consuming _plugins_ and will have no effect
+on the `test` or `run` phases of your dist. ( For that, you'll need `Test::File::ShareDir` ).
+
+# USAGE
+
+    [Bootstrap::lib]
+
+    [Bootstrap::ShareDir::Module]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+
+    [ModuleShareDirs]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+
+The only significant difference between this module and `ModuleShareDirs` is this module exists to
+make a `share` visible to plugins for the distribution being built, while `ModuleShareDirs` exists
+to export a `share` directory visible after install time.
+
+Additionally, there are two primary attributes that are provided by
+[`Dist::Zilla::Role::Bootstrap`](https://metacpan.org/pod/Dist::Zilla::Role::Bootstrap), See
+["ATTRIBUTES" in Dist::Zilla::Role::Bootstrap](https://metacpan.org/pod/Dist::Zilla::Role::Bootstrap#ATTRIBUTES)
+
+For instance, this bootstraps `ROOT/Your-Dist-Name-$VERSION/shares/foo_bar` if it exists and
+there's only one `$VERSION`, otherwise it falls back to simply bootstrapping `ROOT/shares/foo_bar`
+
+    [Bootstrap::ShareDir::Module]
+    Foo::Bar = shares/foo_bar
+    Foo::Baz = shares/foo_baz
+    ; These are special cased
+    dir = share
+    try_built = 1
+
 # AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
