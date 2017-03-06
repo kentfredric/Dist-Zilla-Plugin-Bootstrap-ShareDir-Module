@@ -103,6 +103,7 @@
          },
          "requires" : {
             "Dist::Zilla::Role::Bootstrap" : "0",
+            "Dist::Zilla::Util::ConfigDumper" : "0",
             "Moose" : "0",
             "Path::Tiny" : "0",
             "Test::File::ShareDir::Object::Module" : "0",

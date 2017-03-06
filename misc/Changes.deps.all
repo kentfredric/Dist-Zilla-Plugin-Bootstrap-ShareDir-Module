@@ -36,7 +36,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::MetaYAML
 
  [Removed / runtime requires]
- - Dist::Zilla::Util::ConfigDumper
  - utf8
 
 1.001001 2015-01-21T16:26:20Z
