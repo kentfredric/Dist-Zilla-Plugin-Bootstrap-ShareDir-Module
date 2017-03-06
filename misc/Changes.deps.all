@@ -10,6 +10,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Software::License::Perl_5
  - Test::MinimumVersion
 
+ [Changed / configure requires]
+ - perl 5.008 → 5.006
+
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001 → 0.004002
  - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0 → 0.001002
@@ -20,13 +23,20 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::App::Command::bakeini 0.002000 → 0.002006
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.023002 → 2.025021
 
+ [Changed / runtime requires]
+ - perl 5.008 → 5.006
+
  [Changed / test requires]
  - Test::More 0.89 → 0
+ - perl 5.008 → 5.006
 
  [Removed / develop requires]
  - Dist::Zilla::Plugin::Bootstrap::ShareDir::Module
  - Dist::Zilla::Plugin::Bootstrap::lib 0.04000000
  - Dist::Zilla::Plugin::MetaYAML
+
+ [Removed / runtime requires]
+ - utf8
 
 1.001001 2015-01-21T16:26:20Z
  [Added / configure requires]
