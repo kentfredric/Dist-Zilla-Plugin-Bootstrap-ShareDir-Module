@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
+1.001003 2017-03-06T06:42:06Z c3c4d99
+
 1.001002 2017-03-06T05:56:08Z c383b1c
  [Bugfix]
  - Avoid testing issues under -Ddefault_inc_excludes_dot

@@ -24,7 +24,7 @@ name: Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 provides:
   Dist::Zilla::Plugin::Bootstrap::ShareDir::Module:
     file: lib/Dist/Zilla/Plugin/Bootstrap/ShareDir/Module.pm
-    version: '1.001002'
+    version: '1.001003'
 recommends:
   Moose: '2.000'
   Path::Tiny: '0.058'
@@ -40,4 +40,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module.git
-version: '1.001002'
+version: '1.001003'
