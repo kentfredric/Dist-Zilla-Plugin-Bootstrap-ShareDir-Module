@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 1.001002
+ [Changed / test requires]
+ - Test::More 0.89 → 0
 
 1.001001 2015-01-21T16:26:20Z
  [Added / configure requires]
@@ -84,4 +86,3 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 0.1.1 2013-09-08T11:23:50Z
  [Added / test requires]
  - Dist::Zilla::Plugin::Bootstrap::lib 0.04000000
-
