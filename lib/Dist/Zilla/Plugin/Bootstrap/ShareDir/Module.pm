@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::Bootstrap::ShareDir::Module;
 
-our $VERSION = '1.001002';
+our $VERSION = '1.001003';
 
 # ABSTRACT: Use a share directory on your dist for a module during bootstrap
 
