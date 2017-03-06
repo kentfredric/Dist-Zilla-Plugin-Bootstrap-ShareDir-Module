@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
 
-1.001002 2017-03-06T05:49:29Z fb27bd9
+1.001002 2017-03-06T05:56:08Z c383b1c
  [Bugfix]
  - Avoid testing issues under -Ddefault_inc_excludes_dot
  - Closes https://github.com/kentnl/Dist-Zilla-Plugin-Bootstrap-ShareDir-Module/issues/1
@@ -9,8 +9,11 @@ Release history for Dist-Zilla-Plugin-Bootstrap-ShareDir-Module
  - Dependencies changed since 1.001001, see misc/*.deps* for details
  - configure: ↓1
  - develop: +7 ↑4 -3 (suggests: ↑2)
- - runtime: ↓1 -1
+ - runtime: ↓1 -2
  - test: ↓2
+
+ [Internals]
+ - Remove use of ConfigDumper
 
 1.001001 2015-01-21T16:26:20Z af98f22
  [Dependencies::Stats]

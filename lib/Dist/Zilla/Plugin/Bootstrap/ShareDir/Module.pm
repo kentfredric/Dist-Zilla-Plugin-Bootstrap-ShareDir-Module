@@ -11,8 +11,6 @@ our $VERSION = '1.001002';
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( with has around );
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
-
 with 'Dist::Zilla::Role::Bootstrap';
 
 
@@ -36,7 +34,19 @@ has module_map => (
 
 sub _build_module_map { return {} }
 
-around 'dump_config' => config_dumper( __PACKAGE__, { attrs => [qw( module_map )] } );
+around 'dump_config' => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  if ( $self->meta->find_attribute_by_name('module_map')->has_value($self) ) {
+    $localconf->{module_map} = $self->module_map;
+  }
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 around 'plugin_from_config' => sub {
   my ( $orig, $self, $name, $payload, $section ) = @_;
