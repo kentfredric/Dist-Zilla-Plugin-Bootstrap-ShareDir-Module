@@ -53,6 +53,7 @@
       "Dist::Zilla::Plugin::TestRelease" : "6.009",
       "Dist::Zilla::Plugin::Twitter" : "0.026",
       "Dist::Zilla::Plugin::UploadToCPAN" : "6.009",
+      "Dist::Zilla::Plugin::lib" : "0.001001",
       "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.025021",
       "Dist::Zilla::Role::Bootstrap" : "1.001003",
       "Dist::Zilla::Util::ConfigDumper" : "0.003007",

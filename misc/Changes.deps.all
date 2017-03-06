@@ -5,6 +5,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING 0.001003
  - Dist::Zilla::Plugin::MetaYAML::Minimal
  - Dist::Zilla::Plugin::RemovePrereqs::Provided
+ - Dist::Zilla::Plugin::lib
  - English
  - Software::License::Perl_5
  - Test::MinimumVersion
@@ -24,6 +25,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Removed / develop requires]
  - Dist::Zilla::Plugin::Bootstrap::ShareDir::Module
+ - Dist::Zilla::Plugin::Bootstrap::lib 0.04000000
  - Dist::Zilla::Plugin::MetaYAML
 
 1.001001 2015-01-21T16:26:20Z
