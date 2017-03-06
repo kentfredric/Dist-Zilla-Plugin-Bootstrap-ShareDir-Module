@@ -56,7 +56,6 @@
       "Dist::Zilla::Plugin::lib" : "0.001001",
       "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.025021",
       "Dist::Zilla::Role::Bootstrap" : "1.001003",
-      "Dist::Zilla::Util::ConfigDumper" : "0.003007",
       "Dist::Zilla::Util::Test::KENTNL" : "1.005013",
       "English" : "1.10",
       "ExtUtils::MakeMaker" : "7.24",
@@ -77,7 +76,6 @@
       "Test::Pod" : "1.51",
       "Test::Pod::Coverage" : "1.10",
       "strict" : "1.11",
-      "utf8" : "1.19",
       "warnings" : "1.37"
    },
    "perl" : {
